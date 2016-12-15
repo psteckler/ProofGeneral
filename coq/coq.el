@@ -1387,11 +1387,8 @@ Near here means PT is either inside or just aside of a comment."
 (defpacustom printing-depth 50
   "Depth of pretty printer formatting, beyond which an ellipsis (...) is displayed."
   :type 'integer
-<<<<<<< HEAD
   :setting (lambda (depth) 
              (coq-queries-set-printing-depth depth)))
-=======
-  :setting "Set Printing Depth %i . ")
 
 ;;; Obsolete:
 ;;(defpacustom undo-depth coq-default-undo-limit
@@ -1415,8 +1412,6 @@ Near here means PT is either inside or just aside of a comment."
   :type 'string
   :get coq-get-search-blacklist
   :setting coq-set-search-blacklist)
-
->>>>>>> a423f633e6a41ab680a51e3af320056bde249584
 
 (defpacustom time-commands nil
   "Whether to display timing information for each command."
