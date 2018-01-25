@@ -378,7 +378,13 @@ Comments are ignored, of course."
       (coq-empty-command-p))
      ;; other bulleting syntax
      ((looking-at "{\\|}\\|-\\|\\+\\|\\*") (coq-empty-command-p))
-     ;; not a bullet, we foound something else, it shoulf be either a
+     ;; Time modifier
+     ((and (> (point) 3)
+           (< (point) (point-max))
+           (string= "Time" (buffer-substring (- (point) 3) (1+ (point)))))
+      (goto-char (- (point) 3))
+      (coq-empty-command-p))
+     ;; not a bullet, we found something else, it should be either a
      ;; dot or the beginning of the file, otherwise we are in the
      ;; middle of a command
      (t (looking-at "\\.\\|\\`"))
